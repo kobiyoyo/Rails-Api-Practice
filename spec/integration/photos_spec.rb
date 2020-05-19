@@ -27,7 +27,56 @@ describe 'Photos API' do
       end
     end
   end
+  path '/api/v1/photos/{id}' do
 
+    put 'Update a photo' do
+      tags 'Photos'
+      consumes 'application/json', 'application/xml'
+      parameter name: :photo, in: :body, schema: {
+        type: :object,
+        properties: {
+          title: { type: :string },
+          photo_url_string: { type: :string }
+        },
+        required: [ 'title', 'photo_url_string' ]
+      }
+
+      response '201', 'photo updated' do
+        let(:photo) { { title: 'Dodo', photo_url_string: 'availabl.png' } }
+        run_test!
+      end
+
+      response '422', 'invalid request' do
+        let(:photo) { { title: '' } }
+        run_test!
+      end
+    end
+  end
+path '/api/v1/photos/{id}' do
+
+    delete 'Delete a photo' do
+      tags 'Photos'
+      consumes 'application/json', 'application/xml'
+      parameter name: :photo, in: :body, schema: {
+        type: :object,
+        properties: {
+          title: { type: :string },
+          photo_url_string: { type: :string }
+        },
+        required: [ 'title', 'photo_url_string' ]
+      }
+
+      response '201', 'photo updated' do
+        let(:photo) { { title: 'Dodo', photo_url_string: 'availabl.png' } }
+        run_test!
+      end
+
+      response '422', 'invalid request' do
+        let(:photo) { { title: '' } }
+        run_test!
+      end
+    end
+  end
   path '/api/v1/photos/{id}' do
 
     get 'Retrieves a photo' do
