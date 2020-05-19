@@ -10,14 +10,14 @@ class Api::V1::PhotosController < ApplicationController
 	def create
 		@photo = Photo.new(photo_params)
 		if @photo.save
-			render json: @photo,status: :created,location: @photo
+			render json: @photo,status: :created
 		else
 			render json: { errors: @photo.errors.full_messages }
 		end
 	end
 	def update
 		if @photo.update(photo_params)
-			render json: @photo,status: :updated,location: @photo
+			render json: @photo,status: :updated
 		else
 			render json: { errors: @photo.errors.full_messages }
 		end 
@@ -33,6 +33,6 @@ class Api::V1::PhotosController < ApplicationController
 	end
 
 	def photo_params
-		params.require.permit(:title,:photo_url_string)
+		params.permit(:title,:photo_url_string)
 	end
 end

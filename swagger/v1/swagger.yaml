@@ -1,0 +1,90 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/photos":
+    post:
+      summary: Creates a photo
+      tags:
+      - Photos
+      parameters: []
+      responses:
+        '201':
+          description: photo created
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                photo_url_string:
+                  type: string
+              required:
+              - title
+              - photo_url_string
+          application/xml:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                photo_url_string:
+                  type: string
+              required:
+              - title
+              - photo_url_string
+  "/api/v1/photos/{id}":
+    get:
+      summary: Retrieves a photo
+      tags:
+      - Photos
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: name found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  photo_url_string:
+                    type: string
+                required:
+                - id
+                - name
+                - status
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  photo_url_string:
+                    type: string
+                required:
+                - id
+                - name
+                - status
+        '404':
+          description: photo not found
+          content: {}
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
