@@ -9,9 +9,9 @@
     <a href="https://github.com/kobiyoyo/Rails-Api-Practice/issues">Report Bug</a>
     <a href="https://github.com/kobiyoyo/Rails-Api-Practice/issues">Request Feature</a>
   </p>
-  <img src="docs/screenshot.png" alt="facebook-project">
-</p>
 
+</p>
+<p align='center'><img src="docs/screenshot.png" alt="facebook-project"></p>
 
 
 ## Description
