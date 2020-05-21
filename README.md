@@ -84,7 +84,7 @@ $ cd rails c
 
 ## Contributing
 
-1. Fork it (https://github.com/kobiyoyo/FACEBOOK-CLONE/fork)
+1. Fork it (https://github.com/kobiyoyo/Rails-Api-Practice/fork)
 2. Create your feature branch (git checkout -b feature/[choose-a-name])
 3. Commit your changes (git commit -am 'what this commit will fix/add')
 4. Push to the branch (git push origin feature/[chosen-name])
