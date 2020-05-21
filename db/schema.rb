@@ -17,11 +17,10 @@ ActiveRecord::Schema.define(version: 2020_05_19_155029) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.bigint "photo_id", null: false
+    t.integer "photo_id"
     t.string "owner"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["photo_id"], name: "index_comments_on_photo_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -38,5 +37,4 @@ ActiveRecord::Schema.define(version: 2020_05_19_155029) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "comments", "photos"
 end
