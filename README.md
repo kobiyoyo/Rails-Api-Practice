@@ -33,9 +33,6 @@ The Rails-Api-Practice project is an implementation of Photo using Ruby on Rails
 
 
 
-## Future features
-* Ability to login with Facebook.
-* Logout after 5 minutes of inactivity
 
 
 ## Environment
