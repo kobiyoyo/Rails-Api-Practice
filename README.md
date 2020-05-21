@@ -6,10 +6,7 @@
     A Ruby on Rails application
     <br />
     <br />
-
-    ·
     <a href="https://github.com/kobiyoyo/Rails-Api-Practice/issues">Report Bug</a>
-    ·
     <a href="https://github.com/kobiyoyo/Rails-Api-Practice/issues">Request Feature</a>
   </p>
   <img src="app/assets/images/screenshot.png" alt="facebook-project">
